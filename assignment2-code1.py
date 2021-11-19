@@ -17,7 +17,7 @@ while guesses_taken<3:
     except ValueError:
         print('Sorry, that\'s not a number between 1 and 10!') #if not a float, print this
         time.sleep(1)
-        print('Please print a number between 1 and 10.')
+        print('Please give a number between 1 and 10.')
         guess = input()
         guess = float(guess)
 
@@ -27,15 +27,15 @@ while guesses_taken<3:
         if guesses_taken > 0: #if there are any guesses remaining
             print('You have ' + str(3-guesses_taken) + ' guesses remaining.')
 
-    if guess > number: #if guess is too high, print below
+    elif guess > number: #if guess is too high, print below
         print ('That\'s too high.')
         time.sleep(1)
         if guesses_taken > 0: #if there are any guesses remaining
             print('You have ' + str(3-guesses_taken) + ' guesses remaining.')
 
-        if guess == number:
-            print ('Correct! You guessed my number.')
-            break
+    elif guess == number:
+        print ('Correct! You guessed my number.')
+        break
 
 if guess != number:
     correct_number = str(number)
